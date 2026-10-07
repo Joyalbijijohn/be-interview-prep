@@ -50,6 +50,16 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return body(HttpStatus.NOT_FOUND, ex.getMessage(), null);
     }
 
+    @ExceptionHandler(ConflictException.class)
+    ResponseEntity<Object> handleConflict(ConflictException ex) {
+        return body(HttpStatus.CONFLICT, ex.getMessage(), null);
+    }
+
+    @ExceptionHandler(UnauthorizedException.class)
+    ResponseEntity<Object> handleUnauthorized(UnauthorizedException ex) {
+        return body(HttpStatus.UNAUTHORIZED, ex.getMessage(), null);
+    }
+
     @ExceptionHandler(GoneException.class)
     ResponseEntity<Object> handleGone(GoneException ex) {
         return body(HttpStatus.GONE, ex.getMessage(), null);
