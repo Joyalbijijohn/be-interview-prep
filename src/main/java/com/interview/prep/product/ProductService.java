@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class ProductService {
 
-    static final String CACHE = "products";
+    public static final String CACHE = "products";
     private static final Set<String> SORTABLE_FIELDS =
             Set.of("id", "name", "category", "price", "stock", "rating", "createdAt");
 
