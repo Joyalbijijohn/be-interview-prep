@@ -50,6 +50,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return body(HttpStatus.NOT_FOUND, ex.getMessage(), null);
     }
 
+    @ExceptionHandler(GoneException.class)
+    ResponseEntity<Object> handleGone(GoneException ex) {
+        return body(HttpStatus.GONE, ex.getMessage(), null);
+    }
+
     @ExceptionHandler(Exception.class)
     ResponseEntity<Object> handleUnexpected(Exception ex) {
         log.error("Unexpected error", ex);
