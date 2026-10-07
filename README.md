@@ -10,7 +10,7 @@ Spring Boot 3.5 (Java 17, Maven, H2 in-memory) backend interview assignment.
 | 4 | Product Catalog | [#4](https://github.com/Joyalbijijohn/be-interview-prep/pull/4) |
 | 5 | Order Service | [#5](https://github.com/Joyalbijijohn/be-interview-prep/pull/5) |
 
-Video:
+Video: https://youtu.be/mjWK7V3Q_yA
 
 ## Run
 
