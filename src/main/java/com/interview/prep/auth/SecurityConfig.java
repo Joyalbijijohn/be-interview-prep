@@ -51,6 +51,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/auth/register", "/api/auth/login").permitAll()
                         .requestMatchers(HttpMethod.GET, "/{code:[0-9A-Za-z]{1,8}}").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/users").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/products/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/products/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .exceptionHandling(e -> e.authenticationEntryPoint(unauthorized).accessDeniedHandler(forbidden))
                 .oauth2ResourceServer(oauth -> oauth
